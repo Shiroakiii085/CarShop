@@ -134,4 +134,12 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    // 7. Form Next URL dynamically
+    const nextInput = document.querySelector('input[name="_next"]');
+    if (nextInput) {
+        // FormSubmit requires a fully qualified URL for the _next parameter
+        // This ensures it dynamically gets the absolute URL of the current page
+        nextInput.value = window.location.href;
+    }
 });
