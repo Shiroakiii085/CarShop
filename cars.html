@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tất Cả Mẫu Xe | Velocity Auto</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Custome CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .page-header {
+            padding: 150px 0 50px;
+            text-align: center;
+            background: linear-gradient(180deg, #0a0a0c 0%, rgba(22,22,26,0.6) 100%);
+            border-bottom: 1px solid var(--border);
+        }
+        .page-title {
+            font-size: 3.5rem;
+            margin-bottom: 16px;
+        }
+        .car-grid-large {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 50px 0;
+        }
+        @media (max-width: 1024px) {
+            .car-grid-large { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .car-grid-large { grid-template-columns: 1fr; }
+            .page-title { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar" style="background: rgba(10, 10, 12, 0.85); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border);">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <i class="ph-fill ph-car-profile"></i>
+                VELOCITY
+            </a>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Tất cả xe</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="index.html" class="btn btn-primary"><i class="ph ph-arrow-left"></i> Trở về trang chủ</a>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="ph ph-list"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title"><span class="gradient-text">Kho Xe</span> Cao Cấp</h1>
+            <p class="section-desc">Khám phá toàn bộ bộ sưu tập siêu xe hiện có tại các đại lý của Velocity.</p>
+        </div>
+    </header>
+
+    <!-- All Cars Grid -->
+    <section class="section">
+        <div class="container">
+            <!-- Filters -->
+            <div class="filters-container" style="background: var(--bg-card); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border); margin-bottom: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                <div class="form-group">
+                    <label style="color: var(--text-muted); font-size: 0.85rem; display: block; margin-bottom: 5px;">Tìm tên xe</label>
+                    <input type="text" id="searchName" placeholder="Ví dụ: 911..." style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: var(--radius-sm); color: white; outline: none;">
+                </div>
+                <div class="form-group">
+                    <label style="color: var(--text-muted); font-size: 0.85rem; display: block; margin-bottom: 5px;">Hãng xe</label>
+                    <select id="filterBrand" style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: var(--radius-sm); color: white; outline: none;">
+                        <option value="" style="background: var(--bg-dark);">Tất cả hãng</option>
+                        <option value="Ferrari" style="background: var(--bg-dark);">Ferrari</option>
+                        <option value="Lamborghini" style="background: var(--bg-dark);">Lamborghini</option>
+                        <option value="Porsche" style="background: var(--bg-dark);">Porsche</option>
+                        <option value="McLaren" style="background: var(--bg-dark);">McLaren</option>
+                        <option value="Audi" style="background: var(--bg-dark);">Audi</option>
+                        <option value="Mercedes" style="background: var(--bg-dark);">Mercedes</option>
+                        <option value="Aston Martin" style="background: var(--bg-dark);">Aston Martin</option>
+                        <option value="Maserati" style="background: var(--bg-dark);">Maserati</option>
+                        <option value="Rolls-Royce" style="background: var(--bg-dark);">Rolls-Royce</option>
+                        <option value="Bentley" style="background: var(--bg-dark);">Bentley</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label style="color: var(--text-muted); font-size: 0.85rem; display: block; margin-bottom: 5px;">Mức giá tối đa: <span id="priceDisplay" class="text-primary">$1,500,000</span></label>
+                    <input type="range" id="filterPrice" min="100000" max="1500000" step="10000" value="1500000" style="width: 100%; accent-color: var(--primary);">
+                </div>
+                <div class="form-group">
+                    <label style="color: var(--text-muted); font-size: 0.85rem; display: block; margin-bottom: 5px;">Nhiên liệu</label>
+                    <select id="filterFuel" style="width: 100%; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: var(--radius-sm); color: white; outline: none;">
+                        <option value="" style="background: var(--bg-dark);">Tất cả</option>
+                        <option value="Xăng" style="background: var(--bg-dark);">Xăng</option>
+                        <option value="Điện" style="background: var(--bg-dark);">Điện</option>
+                        <option value="Hybrid" style="background: var(--bg-dark);">Hybrid</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="car-grid-large" id="carsContainer">
+                <!-- Cars will be injected here via JS -->
+            </div>
+
+            <script>
+                const mockCars = [
+                    { name: "Ferrari SF90 Stradale", brand: "Ferrari", price: "$510,000", image: "https://www.marshallgoldman.com/imagetag/4105/2/l/Used-2022-Ferrari-SF90-Stradale-1735837744.jpg", type: "Hybrid", hp: "986 HP" },
+                    { name: "Lamborghini Revuelto", brand: "Lamborghini", price: "$608,000", image: "https://hips.hearstapps.com/hmg-prod/images/2024-lamborghini-revuelto-lightning-lap-2025-378-67ae462c26ed6.jpg?crop=0.559xw:0.476xh;0.199xw,0.377xh&resize=2048:*", type: "V12 Hybrid", hp: "1001 HP" },
+                    { name: "Porsche 911 GT3 RS", brand: "Porsche", price: "$241,000", image: "https://images.pistonheads.com/nimg/47438/blobid0.jpg", type: "Xăng", hp: "518 HP" },
+                    { name: "McLaren 750S", brand: "McLaren", price: "$324,000", image: "https://hips.hearstapps.com/hmg-prod/images/2024-mclaren-750s-121-66cdd39e16442.jpg?crop=0.622xw:0.526xh;0.280xw,0.373xh&resize=1200:*", type: "Xăng", hp: "740 HP" },
+                    { name: "Audi RS e-tron GT", brand: "Audi", price: "$144,000", image: "https://www.winauto.vn/wp-content/uploads/2024/07/audi-rs-e-tron-gt-640x384.jpg", type: "Điện", hp: "637 HP" },
+                    { name: "Mercedes-AMG G63", brand: "Mercedes", price: "$179,000", image: "https://mercedeshanoi.com.vn/wp-content/uploads/mercedes-g63-amg-2022-mercedeshanoi-com-vn_8.jpg", type: "Xăng", hp: "577 HP" },
+                    { name: "Aston Martin DB12", brand: "Aston Martin", price: "$245,000", image: "https://boulevard.co/wp-content/uploads/2024/09/aston-martin-db12-d1b.png", type: "Xăng", hp: "671 HP" },
+                    { name: "Maserati MC20", brand: "Maserati", price: "$210,000", image: "https://www.maserati.com/content/dam/maserati/international/Models/mc20/introduction/05-desktop.jpg", type: "Xăng", hp: "621 HP" },
+                    { name: "Rolls-Royce Spectre", brand: "Rolls-Royce", price: "$420,000", image: "https://hips.hearstapps.com/hmg-prod/images/2024-rolls-royce-spectre-214-671fa786625a9.jpg?crop=0.598xw:0.504xh;0.348xw,0.391xh&resize=1200:*", type: "Điện", hp: "577 HP" },
+                    { name: "Bentley Continental GT", brand: "Bentley", price: "$235,000", image: "https://i1-vnexpress.vnecdn.net/2023/10/06/Anh2jpg-1696585388.jpg?w=750&h=450&q=100&dpr=1&fit=crop&s=OQmfQTNVRTtpiRGPiCuchA", type: "Xăng", hp: "542 HP" }
+                ];
+
+                const container = document.getElementById('carsContainer');
+                const searchName = document.getElementById('searchName');
+                const filterBrand = document.getElementById('filterBrand');
+                const filterPrice = document.getElementById('filterPrice');
+                const priceDisplay = document.getElementById('priceDisplay');
+                const filterFuel = document.getElementById('filterFuel');
+
+                function parsePrice(priceStr) {
+                    return parseInt(priceStr.replace(/[\$,]/g, ''));
+                }
+
+                function formatPrice(priceNum) {
+                    return "$" + priceNum.toLocaleString('en-US');
+                }
+
+                function renderCars() {
+                    const nameVal = searchName.value.toLowerCase();
+                    const brandVal = filterBrand.value;
+                    const maxPrice = parseInt(filterPrice.value);
+                    const fuelVal = filterFuel.value;
+
+                    // Update price label
+                    priceDisplay.textContent = formatPrice(maxPrice);
+
+                    container.innerHTML = '';
+                    
+                    const filteredCars = mockCars.filter(car => {
+                        const matchName = car.name.toLowerCase().includes(nameVal);
+                        const matchBrand = brandVal === "" || car.brand === brandVal;
+                        const matchPrice = parsePrice(car.price) <= maxPrice;
+                        const matchFuel = fuelVal === "" || car.type.includes(fuelVal);
+                        return matchName && matchBrand && matchPrice && matchFuel;
+                    });
+
+                    if (filteredCars.length === 0) {
+                        container.innerHTML = '<div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--text-muted);">Không tìm thấy xe nào phù hợp với bộ lọc hiện tại.</div>';
+                        return;
+                    }
+
+                    filteredCars.forEach((car) => {
+                        container.innerHTML += `
+                            <div class="car-card">
+                                <div class="car-image-wrapper">
+                                    <img src="${car.image}" alt="${car.name}" class="car-image">
+                                </div>
+                                <div class="car-info">
+                                    <div class="car-brand">${car.brand}</div>
+                                    <h3 class="car-name">${car.name}</h3>
+                                    <div class="car-price">
+                                        <span class="price-value">${car.price}</span>
+                                    </div>
+                                    <div class="car-specs">
+                                        <div class="spec"><i class="ph ph-engine"></i><span>${car.hp}</span></div>
+                                        <div class="spec"><i class="ph ph-gas-pump"></i><span>${car.type}</span></div>
+                                    </div>
+                                    <button class="btn btn-primary btn-block" onclick="alert('Vui lòng quay lại trang chủ để đặt lịch lái thử mẫu xe này!')">Tư vấn ngay</button>
+                                </div>
+                            </div>
+                        `;
+                    });
+                }
+
+                // Add event listeners
+                searchName.addEventListener('input', renderCars);
+                filterBrand.addEventListener('change', renderCars);
+                filterPrice.addEventListener('input', renderCars);
+                filterFuel.addEventListener('change', renderCars);
+
+                // Initial render
+                renderCars();
+            </script>
+        </div>
+    </section>
+
+    <!-- Footer Simple -->
+    <footer class="footer" style="padding-top: 30px;">
+        <div class="container text-center">
+            <p style="color: var(--text-muted); text-align: center;">&copy; 2026 Velocity Auto. Mọi quyền được bảo lưu.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velocity Auto | Siêu Xe Thể Thao & Đẳng Cấp</title>
+    <meta name="description" content="Khám phá bộ sưu tập siêu xe thể thao, xe điện và xe địa hình sang trọng nhất. Trải nghiệm đẳng cấp cùng Velocity Auto.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Custome CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo">
+                <i class="ph-fill ph-car-profile"></i>
+                VELOCITY
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Trang chủ</a></li>
+                <li><a href="#showroom">Showroom</a></li>
+                <li><a href="#services">Dịch vụ</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn btn-primary" id="openModalBtn">Đặt lịch lái thử</button>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="ph ph-list"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <img src="assets/images/hero.png" alt="Siêu xe thể thao màu xám đen tương lai" class="hero-bg" id="hero-img">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="hero-text-wrapper">
+                <span class="badge">Dàn xe mới về</span>
+                <h1 class="hero-title">Định Nghĩa<br><span class="gradient-text">Chuẩn Mực Tốc Độ</span></h1>
+                <p class="hero-subtitle">Trải nghiệm cảm giác lái không giới hạn với bộ sưu tập siêu xe độc quyền từ những thương hiệu hàng đầu thế giới.</p>
+                <div class="hero-buttons">
+                    <a href="#showroom" class="btn btn-primary btn-lg">Khám phá ngay <i class="ph ph-arrow-right"></i></a>
+                    <a href="#" class="btn btn-glass btn-lg"><i class="ph-fill ph-play-circle"></i> Xem video</a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">5K+</span>
+                    <span class="stat-label">Khách Hàng</span>
+                </div>
+                <div class="divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number">150+</span>
+                    <span class="stat-label">Mẫu Xe</span>
+                </div>
+                <div class="divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number">12</span>
+                    <span class="stat-label">Showroom</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Showroom/Featured Cars -->
+    <section id="showroom" class="section showroom">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">Bộ Sưu Tập <span class="gradient-text">Nổi Bật</span></h2>
+                    <p class="section-desc">Những siêu phẩm được khao khát nhất hiện nay đang chờ đón bạn.</p>
+                </div>
+                <div class="header-actions">
+                    <button class="filter-btn active">Xe Hot</button>
+                </div>
+            </div>
+
+            <div class="car-grid">
+                <!-- Car Card 1 -->
+                <div class="car-card">
+                    <div class="car-image-wrapper">
+                        <img src="assets/images/car1.png" alt="Xe thể thao mui trần màu đỏ" class="car-image">
+                        <div class="car-badges">
+                            <span class="badge-tag new">Mới</span>
+                        </div>
+                        <button class="like-btn"><i class="ph ph-heart"></i></button>
+                    </div>
+                    <div class="car-info">
+                        <div class="car-brand">Rosso X</div>
+                        <h3 class="car-name">Crimson V8 Convertible</h3>
+                        <div class="car-price">
+                            <span class="price-value">$245,000</span>
+                            <span class="price-monthly">Trả góp từ $3,200/tháng</span>
+                        </div>
+                        <div class="car-specs">
+                            <div class="spec">
+                                <i class="ph ph-gauge"></i>
+                                <span>3.2s (0-100)</span>
+                            </div>
+                            <div class="spec">
+                                <i class="ph ph-engine"></i>
+                                <span>650 HP</span>
+                            </div>
+                            <div class="spec">
+                                <i class="ph ph-gas-pump"></i>
+                                <span>Xăng</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline btn-block">Xem chi tiết</button>
+                    </div>
+                </div>
+
+                <!-- Car Card 2 -->
+                <div class="car-card">
+                    <div class="car-image-wrapper">
+                        <img src="assets/images/car2.png" alt="SUV điện xanh kim loại" class="car-image">
+                        <div class="car-badges">
+                            <span class="badge-tag eco">Eco</span>
+                        </div>
+                        <button class="like-btn"><i class="ph ph-heart"></i></button>
+                    </div>
+                    <div class="car-info">
+                        <div class="car-brand">AeroTech</div>
+                        <h3 class="car-name">Vision E-SUV 2026</h3>
+                        <div class="car-price">
+                            <span class="price-value">$128,500</span>
+                            <span class="price-monthly">Trả góp từ $1,800/tháng</span>
+                        </div>
+                        <div class="car-specs">
+                            <div class="spec">
+                                <i class="ph ph-lightning"></i>
+                                <span>Pin 110kWh</span>
+                            </div>
+                            <div class="spec">
+                                <i class="ph ph-road-horizon"></i>
+                                <span>650 km</span>
+                            </div>
+                            <div class="spec">
+                                <i class="ph ph-plug-charging"></i>
+                                <span>Điện</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline btn-block">Xem chi tiết</button>
+                    </div>
+                </div>
+
+                <!-- Car Card 3 -->
+                <div class="car-card">
+                    <div class="car-image-wrapper">
+                        <img src="assets/images/car3.png" alt="Xe địa hình xanh lá mờ" class="car-image">
+                        <div class="car-badges">
+                            <span class="badge-tag hot">Bán chạy</span>
+                        </div>
+                        <button class="like-btn"><i class="ph ph-heart"></i></button>
+                    </div>
+                    <div class="car-info">
+                        <div class="car-brand">Titan</div>
+                        <h3 class="car-name">TrailBlazer Pro 4x4</h3>
+                        <div class="car-price">
+                            <span class="price-value">$95,000</span>
+                            <span class="price-monthly">Trả góp từ $1,500/tháng</span>
+                        </div>
+                        <div class="car-specs">
+                            <div class="spec">
+                                <i class="ph ph-mountains"></i>
+                                <span>Off-Road</span>
+                            </div>
+                            <div class="spec">
+                                <i class="ph ph-engine"></i>
+                                <span>500 HP</span>
+                            </div>
+                            <div class="spec">
+                                <i class="ph ph-car-profile"></i>
+                                <span>Hybrid</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline btn-block">Xem chi tiết</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="view-all-container">
+                <a href="cars.html" class="btn btn-primary btn-outline">Xem tất cả xe <i class="ph ph-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services section -->
+    <section id="services" class="section values">
+        <div class="container">
+            <div class="values-grid">
+                <div class="value-text">
+                    <h2 class="section-title">Dịch Vụ <br><span class="gradient-text">Hậu Mãi Đỉnh Cao</span></h2>
+                    <p class="section-desc">Từ bảo dưỡng định kỳ đến nâng cấp chuyên sâu, chúng tôi cam kết chăm sóc chiếc xe của bạn với tiêu chuẩn khắt khe nhất.</p>
+                    
+                    <ul class="value-list">
+                        <li>
+                            <div class="value-icon"><i class="ph-fill ph-wrench"></i></div>
+                            <div class="value-info">
+                                <h4>Bảo dưỡng định kỳ</h4>
+                                <p>Kiểm tra toàn diện 150 điểm theo tiêu chuẩn quốc tế.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="value-icon"><i class="ph-fill ph-drop"></i></div>
+                            <div class="value-info">
+                                <h4>Phủ Ceramic & Chăm sóc thẩm mỹ</h4>
+                                <p>Sử dụng hóa chất cao cấp, giữ màu sơn luôn sáng bóng.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="value-icon"><i class="ph-fill ph-gear"></i></div>
+                            <div class="value-info">
+                                <h4>Nâng Cấp Hiệu Suất</h4>
+                                <p>Tối ưu động cơ, tinh chỉnh hệ thống xả và treo.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="value-visuals">
+                    <div class="glass-board">
+                        <div class="glow-orb"></div>
+                        <div class="feature-item">
+                            <i class="ph ph-shield-check text-primary"></i>
+                            <div>
+                                <h5>Bảo hành chính hãng 5 năm</h5>
+                                <span>An tâm tuyệt đối trên mọi nẻo đường</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="ph ph-car-profile text-primary"></i>
+                            <div>
+                                <h5>Cứu hộ 24/7</h5>
+                                <span>Hỗ trợ kỹ thuật kịp thời ở bất cứ đâu</span>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="ph ph-calendar-check text-primary"></i>
+                            <div>
+                                <h5>Đặt lịch dễ dàng</h5>
+                                <span>Chỉ với thao tác chạm trực tuyến đơn giản</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <i class="ph-fill ph-car-profile"></i>
+                        VELOCITY
+                    </a>
+                    <p>Đỉnh cao thiết kế và công nghệ ô tô. Đưa bạn vượt qua mọi giới hạn tốc độ và sự sang trọng.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="ph-fill ph-facebook-logo"></i></a>
+                        <a href="#"><i class="ph-fill ph-instagram-logo"></i></a>
+                        <a href="#"><i class="ph-fill ph-youtube-logo"></i></a>
+                        <a href="#"><i class="ph-fill ph-twitter-logo"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Về chúng tôi</h4>
+                    <ul>
+                        <li><a href="#">Câu chuyện thương hiệu</a></li>
+                        <li><a href="#">Đội ngũ chuyên gia</a></li>
+                        <li><a href="#">Tuyển dụng</a></li>
+                        <li><a href="#">Tin tức & Sự kiện</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Hỗ trợ</h4>
+                    <ul>
+                        <li><a href="#">Chính sách bảo hành</a></li>
+                        <li><a href="#">Trung tâm dịch vụ</a></li>
+                        <li><a href="#">Câu hỏi thường gặp</a></li>
+                        <li><a href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Đăng ký nhận tin tức</h4>
+                    <p>Nhận ngay thông tin về các dòng xe mới và ưu đãi đặc quyền.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Email của bạn..." required>
+                        <button type="submit" class="btn btn-primary"><i class="ph ph-paper-plane-right"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Velocity Auto. Mọi quyền được bảo lưu.</p>
+                <div class="legal-links">
+                    <a href="#">Điều khoản sử dụng</a>
+                    <a href="#">Chính sách bảo mật</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Test Drive Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 style="font-family: var(--font-heading); margin-bottom: 10px;">Đăng Ký Lái Thử</h2>
+            <p style="color: var(--text-muted); margin-bottom: 24px; font-size: 0.95rem;">Gửi thông tin để sắp xếp lịch trải nghiệm xe. Phản hồi sẽ được gửi tới email của bạn.</p>
+            
+            <form action="https://formsubmit.co/hphamle159@gmail.com" method="POST" class="booking-form">
+                <input type="hidden" name="_subject" value="Yêu cầu đặt lịch lái thử mới từ Velocity!">
+                <input type="hidden" name="_captcha" value="false">
+
+                <div class="form-group">
+                    <label>Họ và tên</label>
+                    <input type="text" name="name" required placeholder="Nhập họ tên...">
+                </div>
+                
+                <div class="form-group">
+                    <label>Email của bạn</label>
+                    <input type="email" name="email" required placeholder="Nhập địa chỉ email...">
+                </div>
+                
+                <div class="form-group">
+                    <label>Điện thoại</label>
+                    <input type="tel" name="phone" required placeholder="Nhập số điện thoại...">
+                </div>
+                
+                <div class="form-group">
+                    <label>Mẫu xe quan tâm</label>
+                    <select name="car_model">
+                        <option value="Crimson V8 Convertible">Crimson V8 Convertible</option>
+                        <option value="Vision E-SUV 2026">Vision E-SUV 2026</option>
+                        <option value="TrailBlazer Pro 4x4">TrailBlazer Pro 4x4</option>
+                        <option value="Ferrari SF90 Stradale">Ferrari SF90 Stradale</option>
+                        <option value="Lamborghini Revuelto">Lamborghini Revuelto</option>
+                        <option value="Porsche 911 GT3 RS">Porsche 911 GT3 RS</option>
+                        <option value="McLaren 750S">McLaren 750S</option>
+                        <option value="Audi RS e-tron GT">Audi RS e-tron GT</option>
+                        <option value="Mercedes-AMG G63">Mercedes-AMG G63</option>
+                        <option value="Aston Martin DB12">Aston Martin DB12</option>
+                        <option value="Maserati MC20">Maserati MC20</option>
+                        <option value="Rolls-Royce Spectre">Rolls-Royce Spectre</option>
+                        <option value="Bentley Continental GT">Bentley Continental GT</option>
+                        <option value="Dự định tự chọn tại SR">Xem xe trực tiếp tại Showroom</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Ngày dự kiến lái thử</label>
+                    <input type="date" name="date" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block">Hoàn tất đặt lịch</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
